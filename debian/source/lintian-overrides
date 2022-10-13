@@ -1,0 +1,6 @@
+#False positive
+source-is-missing test/testHelpers.js line length is 578 characters (>512)
+source-contains-prebuilt-javascript-object gulp-sourcemapsidentity-map/test/index.js line length is 540 characters (>512)
+source-contains-prebuilt-javascript-object test/testHelpers.js line length is 578 characters (>512)
+very-long-line-length-in-source-file gulp-sourcemapsidentity-map/test/index.js line length is 546 characters (>512)
+very-long-line-length-in-source-file test/testHelpers.js line length is 584 characters (>512)

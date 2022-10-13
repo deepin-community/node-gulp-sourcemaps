@@ -1,0 +1,54 @@
+Source: node-gulp-sourcemaps
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Sruthi Chandran <srud@disroot.org>
+Section: javascript
+Testsuite: autopkgtest-pkg-nodejs
+Priority: optional
+Build-Depends: debhelper-compat (= 13)
+ , dh-sequence-nodejs
+ , gulp <!nocheck>
+ , libjs-bootstrap <!nocheck>
+ , node-acorn (>= 5.0) <!nocheck>
+ , node-convert-source-map <!nocheck>
+ , node-css <!nocheck>
+ , node-debug-fabulous (>= 1.0) <!nocheck>
+ , node-detect-newline <!nocheck>
+ , node-graceful-fs (>= 4.0) <!nocheck>
+ , node-gulp-concat <!nocheck>
+ , node-gulp-load-plugins <!nocheck>
+ , node-hook-std (>= 2) <!nocheck>
+ , node-lodash <!nocheck>
+ , node-mississippi <!nocheck>
+ , node-normalize-path <!nocheck>
+ , node-object-assign <!nocheck>
+ , node-postcss <!nocheck>
+ , node-source-map (>= 0.6) <!nocheck>
+ , node-strip-bom <!nocheck>
+ , node-tape <!nocheck>
+ , node-through2 (>= 2.0) <!nocheck>
+ , node-vinyl <!nocheck>
+ , node-yargs <!nocheck>
+Standards-Version: 4.5.1
+Vcs-Browser: https://salsa.debian.org/js-team/node-gulp-sourcemaps
+Vcs-Git: https://salsa.debian.org/js-team/node-gulp-sourcemaps.git
+Homepage: https://github.com/floridoo/gulp-sourcemaps
+Rules-Requires-Root: no
+
+Package: node-gulp-sourcemaps
+Architecture: all
+Depends: ${misc:Depends}
+ , node-acorn (>= 5.0)
+ , node-convert-source-map
+ , node-css
+ , node-debug-fabulous (>= 1.0)
+ , node-detect-newline
+ , node-graceful-fs (>= 4.0)
+ , node-normalize-path
+ , node-postcss
+ , node-source-map (>= 0.6)
+ , node-strip-bom
+ , node-through2 (>= 2.0)
+ , nodejs
+Provides: ${nodejs:Provides}
+Description: Source map support for Gulp.js
+ Node.js is an event-based server-side JavaScript engine.

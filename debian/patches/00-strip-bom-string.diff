@@ -1,0 +1,30 @@
+Description: Use strip-bom instead of strip-bpm-string.
+Forwarded: not-needed
+Author: Paolo Greppi <paolo.greppi@libpf.com>
+
+Index: node-gulp-sourcemaps/src/init/index.internals.js
+===================================================================
+--- node-gulp-sourcemaps.orig/src/init/index.internals.js
++++ node-gulp-sourcemaps/src/init/index.internals.js
+@@ -3,7 +3,7 @@
+ var utils = require('../utils');
+ var rootDebug = require('../debug');
+ var convert = require('convert-source-map');
+-var stripBom = require('strip-bom-string');
++var stripBom = require('strip-bom');
+ var urlRegex = utils.urlRegex;
+ var fs = require('graceful-fs');
+ var path = require('path');
+Index: node-gulp-sourcemaps/src/write/index.internals.js
+===================================================================
+--- node-gulp-sourcemaps.orig/src/write/index.internals.js
++++ node-gulp-sourcemaps/src/write/index.internals.js
+@@ -6,7 +6,7 @@ module.exports = function(destPath, opti
+   var unixStylePath = utils.unixStylePath;
+   var fs = require('graceful-fs');
+   var path = require('path');
+-  var stripBom = require('strip-bom-string');
++  var stripBom = require('strip-bom');
+   var rootDebug = require('../debug').spawn('write:internals');
+ 
+   rootDebug(function() { return "options"; });

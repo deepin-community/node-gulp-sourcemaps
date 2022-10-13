@@ -1,0 +1,5 @@
+00-strip-bom-string.diff
+01-bootstrap.diff
+02-npm.diff
+fix-test.diff
+fix-for-hook-std-2.patch

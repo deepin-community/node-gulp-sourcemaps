@@ -1,0 +1,26 @@
+version=4
+opts=\
+dversionmangle=s/\+(debian|dfsg|ds|deb)(\.\d+)?$//,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-gulp-sourcemaps-$1.tar.gz/ \
+ https://github.com/floridoo/gulp-sourcemaps/tags .*/archive/v?([\d\.]+).tar.gz group
+
+opts=\
+ctype=nodejs,\
+component=gulp-sourcemapsidentity-map,\
+dversionmangle=auto,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-identity-map-$1.tar.gz/ \
+ https://github.com/gulp-sourcemaps/identity-map/tags .*/archive/v?([\d\.]+).tar.gz checksum
+
+opts=\
+ctype=nodejs,\
+component=gulp-sourcemapsmap-sources,\
+dversionmangle=auto,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-map-sources-$1.tar.gz/ \
+ https://github.com/gulp-sourcemaps/map-sources/tags .*/archive/v?([\d\.]+).tar.gz checksum
+
+opts=\
+ctype=nodejs,\
+component=strip-bom-string,\
+dversionmangle=auto,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-strip-bom-string-$1.tar.gz/ \
+ https://github.com/jonschlinkert/strip-bom-string/tags .*/archive/v?([\d\.]+).tar.gz checksum

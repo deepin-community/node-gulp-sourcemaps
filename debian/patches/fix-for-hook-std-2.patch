@@ -1,0 +1,66 @@
+Description: fix for node-hook-std ≥ 2
+Author: Xavier Guimard <yadd@debian.org>
+Forwarded: no
+Last-Update: 2020-12-21
+
+--- a/test/init.js
++++ b/test/init.js
+@@ -419,13 +419,14 @@
+ 
+     var history = [];
+     console.log('HOOKING');
+-    var unhook = hookStd.stderr(function(s) {
++    var promise = hookStd.stderr(function(s) {
+       history.push(s);
+     });
+     var pipeline = sourcemaps.init({loadMaps: true});
+ 
+-    pipeline.on('data', function() {
+-      unhook();
++    pipeline.on('data', async function() {
++      promise.unhook();
++      await promise;
+       var hasRegex =  function(regex){
+         return function(s){
+           return regex.test(s);
+@@ -447,13 +448,14 @@
+ 
+     var history = [];
+     console.log('HOOKING');
+-    var unhook = hookStd.stderr(function(s) {
++    var promise = hookStd.stderr(function(s) {
+       history.push(s);
+     });
+     var pipeline = sourcemaps.init({loadMaps: true});
+ 
+-    pipeline.on('data', function() {
+-      unhook();
++    pipeline.on('data', async function() {
++      promise.unhook();
++      await promise;
+       var hasRegex =  function(regex){
+         return function(s){
+           return regex.test(s);
+--- a/test/write.js
++++ b/test/write.js
+@@ -674,7 +674,7 @@
+     delete file.sourceMap.sourcesContent;
+ 
+     var history = [];
+-    var unhook = hookStd.stderr(function(s) {
++    var promise = hookStd.stderr(function(s) {
+       history.push(s);
+     });
+     var pipeline = sourcemaps.write();
+@@ -684,8 +684,9 @@
+         return regex.test(s);
+       };
+     };
+-    pipeline.on('data', function() {
+-      unhook();
++    pipeline.on('data', async function() {
++      promise.unhook();
++      await promise;
+       console.log(JSON.stringify(history));
+       t.ok(history.some(hasRegex(/No source content for "helloworld.js.invalid". Loading from file./g)), 'should log missing source content');
+       t.ok(history.some(hasRegex(/source file not found: /g)), 'should warn about missing file');

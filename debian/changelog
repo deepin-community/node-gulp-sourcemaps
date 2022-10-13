@@ -1,0 +1,62 @@
+node-gulp-sourcemaps (2.6.5+~cs4.0.1-3) unstable; urgency=medium
+
+  * Team upload
+  * Declare compliance with policy 4.5.1
+  * Add ctype=nodejs to component(s)
+  * Add patch for node-hook-std ≥ 2
+
+ -- Xavier Guimard <yadd@debian.org>  Mon, 21 Dec 2020 15:08:11 +0100
+
+node-gulp-sourcemaps (2.6.5+~cs4.0.1-2) unstable; urgency=medium
+
+  * Team upload
+  * Fix copyright
+  * Install @gulp-sourcemaps/identity-map and @gulp-sourcemaps/map-sources in
+    nodejs root directories
+
+ -- Xavier Guimard <yadd@debian.org>  Tue, 06 Oct 2020 08:11:41 +0200
+
+node-gulp-sourcemaps (2.6.5+~cs4.0.1-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Paolo Greppi ]
+  * Update Vcs fields for migration to https://salsa.debian.org/
+  * Bump standard version
+  * Bump debhelper compat
+  * New upstream version
+  * Use strip-bom instead of strip-bom-string
+  * patch tests
+  * temporarily bundle node_modules dir
+
+  [ Xavier Guimard ]
+  * Bump debhelper compatibility level to 12
+  * Declare compliance with policy 4.5.0
+  * Add "Rules-Requires-Root: no"
+  * Add debian/gbp.conf
+  * Add upstream/metadata
+  * Use pkg-js-tools auto install
+  * Embed components: @gulp-sourcemaps/identity-map,
+    @gulp-sourcemaps/map-sources, strip-bom-string
+  * New upstream version 2.6.5+~cs4.0.1
+  * Bump debhelper compatibility level to 13
+  * Use dh-sequence-nodejs
+  * Add dependency to node-postcss
+  * Update lintian overrides
+  * Update copyright
+  * Mark test dependencies with <!nocheck>
+  * Enable part of upstream test using tape
+
+ -- Xavier Guimard <yadd@debian.org>  Tue, 06 Oct 2020 08:05:16 +0200
+
+node-gulp-sourcemaps (1.9.1-2) unstable; urgency=medium
+
+  * Fix dependency on acorn as node-acorn
+
+ -- Sruthi Chandran <srud@disroot.org>  Sun, 11 Dec 2016 23:28:20 +0530
+
+node-gulp-sourcemaps (1.9.1-1) unstable; urgency=low
+
+  * Initial release (Closes: #847734)
+
+ -- Sruthi Chandran <srud@disroot.org>  Sun, 11 Dec 2016 12:53:38 +0530

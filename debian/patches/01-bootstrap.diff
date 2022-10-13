@@ -1,0 +1,14 @@
+Description: Fix path to bootstrap.less installed by libjs-bootstrap
+Forwarded: not-needed
+Author: Paolo Greppi <paolo.greppi@libpf.com>
+
+Index: node-gulp-sourcemaps/test/assets/test.less
+===================================================================
+--- node-gulp-sourcemaps.orig/test/assets/test.less
++++ node-gulp-sourcemaps/test/assets/test.less
+@@ -1,4 +1,4 @@
+-@import "../../node_modules/bootstrap/less/bootstrap.less";
++@import "/usr/share/javascript/bootstrap/less/bootstrap.less";
+ 
+ body {
+   background: #eee;
